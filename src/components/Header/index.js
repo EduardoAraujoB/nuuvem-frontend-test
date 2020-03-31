@@ -3,19 +3,11 @@ import React from 'react';
 import LogoSVG from '../../assets/logo.svg';
 import LogoTextSVG from '../../assets/logo-text.svg';
 
-import {
-  Container,
-  LogoContainer,
-  Logo,
-  LogoText,
-  Title,
-  SearchWrapper,
-  SearchInput,
-  SearchButton,
-  SearchIcon,
-} from './styles';
+import SearchBar from '../Search';
 
-function Menu() {
+import { Container, LogoContainer, Logo, LogoText, Title } from './styles';
+
+function Header() {
   return (
     <Container>
       <LogoContainer href="/">
@@ -23,14 +15,9 @@ function Menu() {
         <LogoText src={LogoTextSVG} alt="logo-text" />
       </LogoContainer>
       <Title>Chuck Norris Joke</Title>
-      <SearchWrapper>
-        <SearchInput placeholder="Search Jokes" />
-        <SearchButton>
-          <SearchIcon />
-        </SearchButton>
-      </SearchWrapper>
+      <SearchBar />
     </Container>
   );
 }
 
-export default Menu;
+export default Header;

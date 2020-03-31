@@ -1,52 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import Menu from '../../components/Menu';
-import api from '../../services/api';
+import Header from '../../components/Header';
+import JokeList from '../../components/JokeList';
 
-import { Container, Title, JokeContainer } from './styles';
+import { Container } from './styles';
 
 function Home() {
-  const [joke, setJoke] = useState({});
-
-  useEffect(() => {
-    async function loadChucks() {
-      const response = await api.get('/jokes/random');
-      setJoke(response.data);
-    }
-    loadChucks();
-  }, []);
-
+  const { jokes } = useSelector((state) => state.jokes);
   return (
     <>
-      <Menu />
+      <Header />
       <Container>
-        <Title>Random Joke</Title>
-        <JokeContainer>
-          <div>
-            <img alt="joke" src={joke.icon_url} />
-            <span>{joke.value}</span>
-          </div>
-          <div>
-            <img alt="joke" src={joke.icon_url} />
-            <span>{joke.value}</span>
-          </div>
-          <div>
-            <img alt="joke" src={joke.icon_url} />
-            <span>{joke.value}</span>
-          </div>
-          <div>
-            <img alt="joke" src={joke.icon_url} />
-            <span>{joke.value}</span>
-          </div>
-          <div>
-            <img alt="joke" src={joke.icon_url} />
-            <span>{joke.value}</span>
-          </div>
-          <div>
-            <img alt="joke" src={joke.icon_url} />
-            <span>{joke.value}</span>
-          </div>
-        </JokeContainer>
+        <JokeList jokes={jokes} />
       </Container>
     </>
   );
