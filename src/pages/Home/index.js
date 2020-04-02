@@ -3,9 +3,12 @@ import { useSelector } from 'react-redux';
 
 import Paginator from '../../util/Paginator';
 
+import { getJokes } from '../../store/modules/jokes/selectors';
+
 import Header from '../../components/Header';
 import JokeList from '../../components/JokeList';
 import NothingToSee from '../../components/NothingToSee';
+import SearchNotFound from '../../components/SearchNotFound';
 
 import {
   Container,
@@ -18,13 +21,14 @@ import {
 } from './styles';
 
 function Home() {
-  const { jokes } = useSelector((state) => state.jokes);
+  const { jokes } = useSelector(getJokes);
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-
   useEffect(() => {
-    const paginated = Paginator(jokes, page);
-    setData(paginated.data);
+    if (jokes !== null) {
+      const paginated = Paginator(jokes, page);
+      setData(paginated.data);
+    }
   }, [jokes, page]);
 
   function handlePreviousPage(e) {
@@ -40,24 +44,29 @@ function Home() {
       setPage(page + 1);
     }
   }
-
   return (
     <>
       <Header />
-      <Container>
-        {jokes.length === 0 ? (
+      <Container data-testid="home-container">
+        {jokes === null ? (
           <NothingToSee />
         ) : (
-          <JokeListContainer>
-            <JokeList jokes={data} />
-            <ActionsWrapper>
-              <RemoveButton onClick={handlePreviousPage}>
-                <RemoveIcon />
-              </RemoveButton>
-              <AddButton onClick={handleNextPage}>
-                <AddIcon />
-              </AddButton>
-            </ActionsWrapper>
+          <JokeListContainer data-testid="jokes-container">
+            {jokes.length === 0 ? (
+              <SearchNotFound />
+            ) : (
+              <>
+                <JokeList jokes={data} />
+                <ActionsWrapper>
+                  <RemoveButton onClick={handlePreviousPage}>
+                    <RemoveIcon />
+                  </RemoveButton>
+                  <AddButton onClick={handleNextPage}>
+                    <AddIcon />
+                  </AddButton>
+                </ActionsWrapper>
+              </>
+            )}
           </JokeListContainer>
         )}
       </Container>

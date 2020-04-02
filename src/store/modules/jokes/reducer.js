@@ -1,7 +1,7 @@
 import produce from 'immer';
 
-const INITIAL_STATE = {
-  jokes: [],
+export const INITIAL_STATE = {
+  jokes: null,
 };
 
 export default function jokes(state = INITIAL_STATE, action) {

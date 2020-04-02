@@ -4,7 +4,7 @@ import { Container, Icon, Title } from './styles';
 
 function NothingToSee() {
   return (
-    <Container>
+    <Container data-testid="nothing-to-see">
       <Icon />
       <Title>Nothing to see, search something</Title>
     </Container>
