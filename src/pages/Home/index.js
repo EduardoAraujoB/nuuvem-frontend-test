@@ -59,12 +59,17 @@ function Home() {
                 <JokeList jokes={data} />
                 <ActionsWrapper>
                   <RemoveButton
+                    visible={page > 1}
                     data-testid="previous-page"
                     onClick={handlePreviousPage}
                   >
                     <RemoveIcon />
                   </RemoveButton>
-                  <AddButton data-testid="next-page" onClick={handleNextPage}>
+                  <AddButton
+                    visible={jokes.length / 5 > page}
+                    data-testid="next-page"
+                    onClick={handleNextPage}
+                  >
                     <AddIcon />
                   </AddButton>
                 </ActionsWrapper>

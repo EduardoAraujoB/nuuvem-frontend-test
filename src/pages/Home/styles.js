@@ -32,6 +32,7 @@ export const AddButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: ${(props) => (props.visible ? 1 : 0.5)};
   background: #ff6666;
   border-radius: 50%;
   border: 0;
@@ -47,6 +48,7 @@ export const RemoveButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: ${(props) => (props.visible ? 1 : 0.5)};
   background: #ff6666;
   border-radius: 50%;
   border: 0;
