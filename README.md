@@ -1,6 +1,6 @@
 # Overview
 
-That's a project from a challenge made by nuuvem, and is a front-end of a search system, the api used to do a search is the [Chuck Norris Api](https://api.chucknorris.io/)
+That's a project from a challenge made by nuuvem, and is a front-end of a search system, the api used to do a search is the [Chuck Norris Api](https://api.chucknorris.io/), this aplicattion was deployed on heroku you can access [here](https://nuuvem-frontend-test.herokuapp.com/)
 
 ---
 
