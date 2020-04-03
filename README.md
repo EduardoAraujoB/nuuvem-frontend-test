@@ -142,4 +142,11 @@ This library is used to do **HTTP Request** with a easy way, it's easy do use, e
 
 ## Screenshots
 
-Wait a minute I will take it
+![Screenshot 1](https://user-images.githubusercontent.com/42449213/78402027-4933cb80-75d0-11ea-9306-dbe957efe22a.png)
+![Screenshot 2](https://user-images.githubusercontent.com/42449213/78402118-6ec0d500-75d0-11ea-94d9-91bcfc8f3e5e.png)
+![Screenshot 3](https://user-images.githubusercontent.com/42449213/78402164-8435ff00-75d0-11ea-9598-91764bf078eb.png)
+
+### Thanks
+
+Thank you nuuvem for give me this challenge ~~please contract me~~, that's all, folks
+
