@@ -4,7 +4,7 @@ import { Container, JokeImg, JokeText } from './styles';
 
 function JokeItem({ joke }) {
   return (
-    <Container>
+    <Container data-testid={joke.id}>
       <JokeImg src={joke.icon_url} />
       <JokeText>{joke.value}</JokeText>
     </Container>

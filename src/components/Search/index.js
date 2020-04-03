@@ -17,11 +17,12 @@ function Search() {
   return (
     <Container>
       <SearchInput
+        data-testid="search-input"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search Jokes"
       />
-      <SearchButton onClick={handleSearch}>
+      <SearchButton data-testid="search-button" onClick={handleSearch}>
         <SearchIcon />
       </SearchButton>
     </Container>

@@ -9,7 +9,7 @@ import { Container, LogoContainer, Logo, LogoText, Title } from './styles';
 
 function Header() {
   return (
-    <Container>
+    <Container data-testid="header">
       <LogoContainer href="/">
         <Logo src={LogoSVG} alt="logo" />
         <LogoText src={LogoTextSVG} alt="logo-text" />
