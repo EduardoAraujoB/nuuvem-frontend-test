@@ -1,6 +1,6 @@
 # Overview
 
-That's a project from a challenge made by nuuvem, and is a front-end of a search system, the api used to do a search is the [Chuck Norris Api](https://api.chucknorris.io/)
+That's a project from a challenge made by nuuvem, and is a front-end of a search system, the api used to do a search is the [Chuck Norris Api](https://api.chucknorris.io/), this aplicattion was deployed on heroku you can access [here](https://nuuvem-frontend-test.herokuapp.com/)
 
 ---
 
@@ -10,8 +10,8 @@ That's a project from a challenge made by nuuvem, and is a front-end of a search
 - [ Scripts ](#scripts)
 - [ Code Linters ](#code-linters)
 - [ State Management ](#state-management)
-- [ State Debug ]()
-- [ Tests ]()
+- [ Debug ](#debug)
+- [ Tests ](#tests)
 - [ Libraries ]()
 - [ Screenshots ]()
 
@@ -102,7 +102,51 @@ So this help so much in organize components because your component don't will ne
 
 ### A little bit about Sagas
 
-Ok, the "problem" is that Redux works at a syncronous way, that means of your can't do an assynchronous operation, like a call to an API, in the Redux, for this you will use a saga, that's a middleware applied on Redux to intercepted request and dispatch actions. Not only for that, **Sagas** help so much to controll **effects** on aplicattions.
+Ok, the "problem" is that Redux works at a syncronous way, that means of your can't do an assynchronous operation, like a call to an API, in the Redux, for this you will use a saga, that's a middleware applied on Redux to intercepted request and dispatch actions. Not only for that, **Sagas** help so much to controll **side effects** on aplicattions.
 
 ---
+
+## Debug
+
+To debug the State, Actions, Reducers, Sagas, etc... I use a toll called Reactotron, this is a great tool and have Integration with Redux, Mobx and React Native, I really recommended it, you can see more about [here](https://github.com/infinitered/reactotron)
+
+---
+
+## Tests
+
+Now, lets explain what is used to test the aplicattion
+
+### Why Jest?
+
+Jest is used beacause it have a good integration with React and others tests librabries, have a great performance and a nice documentation.
+
+### Testing library
+
+This is the library used to manipule React Componets, manipulate the DOM and fire events in the tests, have other alternatives like the Enzyme, but I like the testing Library.
+
+---
+
+## Libraries
+
+Here I will list others cool libraries that is used and don't is cited previously.
+
+### Styled Components
+
+This library always to wirte `CSS` inside the `JS` and is used with React, so you can use it like a **CSS pre-processor**, but not only that, how does it use **React**, you can do many things, like pass propertiers and change styles based on it, see more [here](https://github.com/styled-components/styled-components)
+
+### Axios
+
+This library is used to do **HTTP Request** with a easy way, it's easy do use, easy to setup and configure **querys**, **headers**, etc... Is more efficient than **fetch**.
+
+---
+
+## Screenshots
+
+![Screenshot 1](https://user-images.githubusercontent.com/42449213/78402027-4933cb80-75d0-11ea-9306-dbe957efe22a.png)
+![Screenshot 2](https://user-images.githubusercontent.com/42449213/78402118-6ec0d500-75d0-11ea-94d9-91bcfc8f3e5e.png)
+![Screenshot 3](https://user-images.githubusercontent.com/42449213/78402164-8435ff00-75d0-11ea-9598-91764bf078eb.png)
+
+### Thanks
+
+Thank you nuuvem for give me this challenge ~~please contract me~~, that's all, folks
 
