@@ -14,7 +14,7 @@ export const JokeListContainer = styled.section`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 560px;
+  height: auto;
   padding: 20px;
 `;
 
@@ -22,6 +22,10 @@ export const ActionsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 300px;
+  @media only screen and (max-width: 760px) {
+    width: 200px;
+    margin-bottom: 60px;
+  }
 `;
 
 export const AddButton = styled.button`

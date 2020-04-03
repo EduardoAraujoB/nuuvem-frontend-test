@@ -6,11 +6,15 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 600px;
+  height: auto;
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
   background: #263241;
   text-align: left;
+  @media only screen and (max-width: 760px) {
+    width: 400px;
+  }
 `;
 
 export const JokeImg = styled.img`
