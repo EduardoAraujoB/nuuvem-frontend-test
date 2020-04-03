@@ -1,68 +1,108 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Overview
 
-## Available Scripts
+That's a project from a challenge made by nuuvem, and is a front-end of a search system, the api used to do a search is the [Chuck Norris Api](https://api.chucknorris.io/)
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## Sumary
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ How to setup ](#how-to-setup)
+- [ Scripts ](#scripts)
+- [ Code Linters ](#code-linters)
+- [ State Management ](#state-management)
+- [ State Debug ]()
+- [ Tests ]()
+- [ Libraries ]()
+- [ Screenshots ]()
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## How to Setup
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First download the aplicattion ( you can skip that if you already have the code )
 
-### `yarn build`
+```
+git clone https://github.com/EduardoAraujoB/nuuvem-frontend-test.git
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After that you can install the dependencies by executing the following command in the root folder of the project
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+or with yarn
 
-### `yarn eject`
+```
+yarn
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Now you have 2 options to start the project:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Start the apllication in development mode
+2. Generate a production build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+We will star the aplicattion in devolopment mode, but you can see more about it in the [ scripts ](#scripts) session, so lets do that!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm run start
+```
 
-## Learn More
+or with yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Now you can open your browser on http://localhost:3000 and the aplicattion will be running, have a good time!
 
-### Code Splitting
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Scripts
 
-### Analyzing the Bundle Size
+There is four types of scritpts on the project
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- `start`: Run the aplicattion on development mode, so you can edit files on the aplicattion and the server will re-start automatically. **note**: This script isn't recommend for **production**
 
-### Making a Progressive Web App
+- `test`: Run the tests of the aplicattion in interative mode
+- `build`: Generate a production build of the aplicattion, this command just build the aplicattion, to run it will need the **node**, see more here [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `eject`: If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project. **note**: That's a one way operation, be careful about that
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+---
 
-### Advanced Configuration
+## Code Linters
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This project use two different code linters and a another
+extension to the IDE, that is...
 
-### Deployment
+### Eslint
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Or EcmaScriptLint, is the linter responsible to check problems in the syntax and return errors, your configurations are shared and used by others linters
 
-### `yarn build` fails to minify
+### Prettier
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This linter is used only for check the **code style**, they don't will check the syntax, just find a way to do the code more **legible** and have a integration with **eslint**
+
+### Editor Config
+
+That isn't a linter, just a extension to share some configs between other editors, like the format of the end of lines, identation with spaces or tabs, etc...
+
+---
+
+## State Management
+
+Ok, lets talk about state management... <br>
+This Project use React as a library to management the state, but the React has some limitations in how to management a state beteween many components, so to improve that, we have the Redux!
+
+### Why Redux?
+
+Redux works with a different architecture called flux architecture, that means of your project will have a global state with a method to store and manage that value, called **reducer**, an **action** to change that **reducer**, and a **dispatcher** to dispatch an action.<br>
+<br>
+So this help so much in organize components because your component don't will need to carefull about carry information about your fathers components, with Redux your components will keep a single responsability, avoind unecessary logics to share information.
+
+### A little bit about Sagas
+
+Ok, the "problem" is that Redux works at a syncronous way, that means of your can't do an assynchronous operation, like a call to an API, in the Redux, for this you will use a saga, that's a middleware applied on Redux to intercepted request and dispatch actions. Not only for that, **Sagas** help so much to controll **effects** on aplicattions.
+
+---
+
