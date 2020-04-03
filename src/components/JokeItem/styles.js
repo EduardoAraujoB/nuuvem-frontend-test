@@ -15,11 +15,18 @@ export const Container = styled.div`
   @media only screen and (max-width: 760px) {
     width: 400px;
   }
+  @media only screen and (max-width: 450px) {
+    width: 300px;
+  }
 `;
 
 export const JokeImg = styled.img`
   align-self: flex-start;
   margin-right: 10px;
+  @media only screen and (max-width: 760px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const JokeText = styled.span`

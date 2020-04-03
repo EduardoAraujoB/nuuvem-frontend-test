@@ -18,5 +18,6 @@ export const ErrorIcon = styled(MdErrorOutline)`
 `;
 
 export const Title = styled.h2`
+  text-align: center;
   color: #fff;
 `;
